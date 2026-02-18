@@ -1,0 +1,73 @@
+version: '3.8'
+
+name: oyamakousen
+
+services:
+  php:
+    build: .
+    container_name: php_mailform
+    ports:
+      - "8080:80"
+    volumes:
+      - ../public_html:/var/www/html
+    environment:
+      - SMTP_HOST=mailpit
+      - SMTP_PORT=1025
+    depends_on:
+      - mailpit
+    networks:
+      - mailform_network
+  
+  db:
+    build:
+        context: ./db
+    container_name: mysql_db
+    ports:
+        - '3306:3306'
+    environment:
+        MYSQL_ROOT_PASSWORD: root_password
+        MYSQL_DATABASE: oyamakousen
+        MYSQL_USER: oyamakousen_user
+        MYSQL_PASSWORD: oyamakousen_password
+        MYSQL_INITDB_SKIP_TZINFO: 1
+        MYSQL_ALLOW_EMPTY_PASSWORD: 1
+        TZ: Asia/Tokyo
+    volumes:
+        - 'db-data:/var/lib/mysql'
+        - './db/initdb.d:/docker-entrypoint-initdb.d'
+    restart: unless-stopped
+    networks:
+      - mailform_network
+  
+  phpmyadmin:
+    image: phpmyadmin:5.2.1
+    depends_on:
+        - db
+    environment:
+        - PMA_ARBITRARY=1
+        - PMA_HOSTS=db
+        - PMA_USER=oyamakousen_user
+        - PMA_PASSWORD=oyamakousen_password
+        - UPLOAD_LIMIT=1G
+    ports:
+        - "8081:80"
+    restart: unless-stopped
+    networks:
+      - mailform_network
+
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: mailpit
+    ports:
+      - "8025:8025"  # Web UI
+      - "1025:1025"  # SMTP
+    networks:
+      - mailform_network
+
+networks:
+  mailform_network:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local
