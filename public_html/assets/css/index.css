@@ -1,0 +1,138 @@
+body {
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+/*=== ヘッダー ===*/
+header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+
+/*=== メインコンテンツ ===*/
+main {
+  flex: 1;
+  margin-inline: auto;
+  max-width: 720px;
+  padding-block: 80px 160px;
+  width: 95%;
+
+  section:not(.mv-section) {
+    margin-top: 80px;
+    margin-inline: auto;
+    max-width: 640px;
+    width: 95%;
+  }
+
+  .section-ttl {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .mv-section {
+    figure {
+      aspect-ratio: 720 / 370;
+      width: 100%;
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  .lead-section {
+    p {
+      .bold {
+        font-weight: 700;
+      }
+      .red {
+        color: red;
+      }
+    }
+  }
+
+  .food-section {
+    .foodList {
+      display: grid;
+      gap: 8px;
+      margin-top: 24px;
+    }
+  }
+
+  .hobby-section {
+    dialog {
+      .dialogContent {
+        display: grid;
+        row-gap: 20px;
+        .dialogContent__label {
+          font-size: 1.2rem;
+          font-weight: 700;
+        }
+        .dialogContent__cont {
+          max-height: 60vh;
+          overflow: auto;
+          p + p {
+            margin-top: 16px;
+          }
+        }
+      }
+    }
+
+    .hobbyList {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 12px;
+      margin-top: 24px;
+
+      .showDialogTrigger {
+        appearance: none;
+        aspect-ratio: 1 / 1;
+        background: rgb(0, 0, 0, 0.05);
+        border: 1px solid rgb(0, 0, 0, 0.5);
+        border-radius: 20px;
+        cursor: pointer;
+        display: grid;
+        font-size: 1rem;
+        font-weight: 500;
+        place-items: center;
+        transition: box-shadow 0.3s, background 0.3s;
+        width: 100%;
+        &:hover {
+          background: rgb(0, 0, 0, 0.1);
+          box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+
+  .qa-section {
+    .qaList {
+      display: grid;
+      gap: 8px;
+      margin-top: 40px;
+    }
+  }
+}
+
+
+/*=== フッター ===*/
+footer {
+  border-top: 2px solid #000;
+  display: grid;
+  place-items: center;
+  font-weight:: 700;
+  padding-block: 4px;
+}
