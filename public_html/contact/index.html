@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/contact.css">
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header" id="header">
+    <h1>PORTFOLIO</h1>
+  </header>
+
+  <main>
+    <form method="POST" action="" class="form">
+      <div class="formRow">
+        <label for="name" class="formLabel">お名前</label>
+        <div class="formInput">
+          <input type="text" name="name" id="name" placeholder="お名前を入力してください" class="error" />
+          <p class="errorTxt">エラーテキストです</p>
+        </div>
+      </div>
+      <div class="formRow">
+        <label for="email" class="formLabel">メールアドレス</label>
+        <div class="formInput">
+          <input type="email" name="email" id="email" placeholder="メールアドレスを入力してください" />
+        </div>
+      </div>
+      <div class="formRow">
+        <label for="subject" class="formLabel">件名</label>
+        <div class="formInput">
+          <input type="text" name="subject" id="subject" placeholder="件名を入力してください" />
+        </div>
+      </div>
+      <div class="formRow">
+        <label for="message" class="formLabel">お問い合わせ内容</label>
+        <div class="formInput">
+          <textarea name="message" id="message" cols="40" rows="10" placeholder="お問い合わせ内容を入力してください"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="button">確認する</button>
+    </form>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer" id="footer">
+    <small>PORTFOLIO</small>
+  </footer>
+
+</body>
+
+</html>

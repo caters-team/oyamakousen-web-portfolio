@@ -140,13 +140,3 @@ main {
     }
   }
 }
-
-
-/*=== フッター ===*/
-footer {
-  border-top: 2px solid #000;
-  display: grid;
-  place-items: center;
-  font-weight:: 700;
-  padding-block: 4px;
-}

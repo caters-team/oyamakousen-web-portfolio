@@ -1,0 +1,43 @@
+.form {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  row-gap: 20px;
+  .formRow {
+    grid-column: 1 / -1;
+    display: grid;
+    align-items: baseline;
+    grid-template-columns: subgrid;
+    column-gap: 24px;
+    width: 100%;
+  }
+  .formLabel {
+    font-weight: 700;
+  }
+  .formInput {
+    display: grid;
+    row-gap: 4px;
+    width: 100%;
+    input,
+    textarea {
+      border: 1px solid #000;
+      box-sizing: border-box;
+      font-size: 16px;
+      padding: 12px 12px;
+      width: 100%;
+      &.error {
+        background: #ffdbdb;
+        border-color: red;
+      }
+    }
+    .errorTxt {
+      color: red;
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+
+  .button {
+    grid-column: 1 / -1;
+    cursor: pointer;
+  }
+}
