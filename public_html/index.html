@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>山本 | 自己紹介</title>
+  <title>自分の名前 | 自己紹介</title>
   <link rel="stylesheet" href="./assets/css/reset.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 
 <body>
@@ -14,37 +14,100 @@
   <!-- ヘッダー -->
   <header class="header" id="header">
     <h1>PORTFOLIO</h1>
-    <nav class="nav">
-      <a href="#">好きな食べ物 </a>
-      <a href="#">好きな動物</a>
-      <a href="#">よくある質問</a>
-    </nav>
   </header>
 
   <main>
     <!-- mv セクション -->
     <section class="mv-section" id="mv-section">
       <figure>
-        <img src="./assets/images/mv.png" alt="メインビジュアル" />
+        <img src="./assets/images/index/mv.png" alt="メインビジュアル" />
       </figure>
     </section>
 
+    <!-- lead セクション -->
+    <section class="lead-section" id="lead-section">
+      <p>
+        自己紹介のテキストを入力してください。
+        <br />
+        強調したい文字だけ<span class="bold">太字</span>にしたり、<span class="red">自由な色</span>をつけてみよう！
+      </p>
+    </section>
+
+    <!-- food セクション -->
     <section class="food-section" id="food-section">
       <h2 class="section-ttl">好きな食べ物</h2>
       <ul class="foodList">
-        <li>・唐揚げ</li>
-        <li>・オムライス</li>
-        <li>・パイナップル</li>
+        <li>・これはリストです</li>
+        <li>・ここに好きな食べ物を書いてみよう</li>
+        <li>・項目の数を増やしてもいいし、もう一つ別の好きなものリストを作成しても面白いかも（もう一つのリストは文字の色や大きさを変えてみるなど）</li>
       </ul>
+    </section>
+
+    <!-- hobby セクション -->
+    <section class="hobby-section" id="hobby-section">
+      <h2 class="section-ttl">趣味</h2>
+      <dialog id="dialog01" closedby="any">
+        <div class="dialogContent">
+          <p class="dialogContent__label">ダイアログ</p>
+          <div class="dialogContent__cont">
+            <div class="dialogContent__cont--inner">
+              <p>前面に立ち上がるようなUIを「ダイアログ（モーダル）」といいます。</p>
+              <p>ユーザーにとって不要な情報を隠すことができるので便利です。</p>
+              <p>
+                もう一つダイアログを増やしてみましょう。
+                <br />
+                ポイントは data-dialog とid の値を揃えてみることです。
+              </p>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <div class="hobbyList">
+        <button class="showDialogTrigger" data-dialog="dialog01">ダイアログ</button>
+      </div>
+    </section>
+
+    <!-- qa セクション -->
+    <section class="qa-section" id="qa-section">
+      <h2 class="section-ttl">よくある質問</h2>
+      <div class="qaList">
+        <details class="accordion">
+          <summary class="accordion__trigger">
+            アコーディオン
+          </summary>
+          <div class="accordion__target">
+            <div class="accordion__target--inner">
+              <p>クリックするとみょーんと伸びるUIを「アコーディオン」といいます。</p>
+              <p>楽器のアコーディオンをイメージしてこのような呼び名みたいです。</p>
+              <p>
+                情報を隠す、整理すると言った部分ではダイアログと共通ですが、アコーディオンの方がもう少しライトです。
+                <br />
+                ダイアログは強制的にユーザーの手や操作を制限してしまうので、注目を集めたい場合や意味の独立性などを考慮します。
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section>
+      <p>
+        ここから下は自由に書いてみましょう！
+      </p>
+    </section>
+
+    <section class="bottom-section" id="bottom-section">
+      <a href="/contact/" class="button">お問い合わせページへ</a>
     </section>
   </main>
 
   <!-- フッター -->
   <footer class="footer" id="footer">
-
+    <small>PORTFOLIO</small>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
